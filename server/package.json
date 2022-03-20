@@ -1,0 +1,24 @@
+{
+	"name": "vscode-mdx-checker",
+	"description": "mdx checker",
+	"version": "1.0.0",
+	"author": "Microsoft Corporation",
+	"license": "MIT",
+	"engines": {
+		"node": "*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Microsoft/vscode-extension-samples"
+	},
+	"dependencies": {
+		"@mdx-js/mdx": "^2.1.0",
+		"vscode-languageserver": "^7.0.0",
+		"vscode-languageserver-textdocument": "^1.0.4"
+	},
+	"scripts": {},
+	"devDependencies": {
+		"@types/react": "^17.0.41",
+		"@types/source-map": "^0.5.7"
+	}
+}
