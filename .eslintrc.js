@@ -2,18 +2,18 @@
 // eslint-disable-next-line no-undef
 module.exports = {
   root: true,
-  parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint"],
-  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
   env: {
     node: true,
   },
   rules: {
-    semi: [2, "always"],
-    "@typescript-eslint/no-unused-vars": 0,
-    "@typescript-eslint/no-explicit-any": 0,
-    "@typescript-eslint/explicit-module-boundary-types": 0,
-    "@typescript-eslint/no-non-null-assertion": 0,
+    semi: [0, 'always'],
+    '@typescript-eslint/no-unused-vars': 0,
+    '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/explicit-module-boundary-types': 0,
+    '@typescript-eslint/no-non-null-assertion': 0,
   },
-  ignorePatterns: ["out", "dir", "webpack.base.js", "webpack.config.js"],
-};
+  ignorePatterns: ['out', 'dir', 'webpack.base.js', 'webpack.config.js'],
+}

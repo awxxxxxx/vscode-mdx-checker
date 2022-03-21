@@ -21,12 +21,32 @@ module.exports = {
       {
         test: /\.ts$/,
         exclude: /node_modules/,
+        include: [path.join(__dirname, "client")],
         use: [
           {
             // configure TypeScript loader:
             // * enable sources maps for end-to-end source maps
             loader: "ts-loader",
             options: {
+              instance: "client",
+              compilerOptions: {
+                sourceMap: true,
+              },
+            },
+          },
+        ],
+      },
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        include: [path.join(__dirname, "server")],
+        use: [
+          {
+            // configure TypeScript loader:
+            // * enable sources maps for end-to-end source maps
+            loader: "ts-loader",
+            options: {
+              instance: "server",
               compilerOptions: {
                 sourceMap: true,
               },
