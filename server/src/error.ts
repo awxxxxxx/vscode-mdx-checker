@@ -26,7 +26,7 @@ export function isMDXParseError(e: any): e is MDXParseError {
   return false
 }
 
-const tagReg = /\((.*?)\)$/
+const tagReg = /\((.*?)\)/
 
 export function parseMDXError(e: MDXParseError): MDXErrorPosition {
   const m = tagReg.exec(e.reason)
