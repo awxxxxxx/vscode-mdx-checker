@@ -157,6 +157,20 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
         message: position.reason,
         source: e.source,
       }
+      if (diagnostic.message.trimRight().endsWith('`</span>`')) {
+        const startOffset = textDocument.offsetAt(diagnostic.range.start)
+        try {
+          const str = text.substring(
+            startOffset,
+            startOffset + diagnostic.range.end.character
+          )
+          if (/^<\s*br\s*>$/.test(str)) {
+            diagnostic.message = diagnostic.message.replace('`</span>`', '<br>')
+          }
+        } catch (e) {
+          console.log(e)
+        }
+      }
       diagnostics.push(diagnostic)
     }
   }
