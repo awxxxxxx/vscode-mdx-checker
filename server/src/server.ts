@@ -12,6 +12,8 @@ import {
   DidChangeConfigurationNotification,
   TextDocumentSyncKind,
   InitializeResult,
+  TextDocumentPositionParams,
+  CompletionItem,
 } from 'vscode-languageserver/node'
 
 import { compile } from '@mdx-js/mdx'
@@ -182,6 +184,18 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
 connection.onDidChangeWatchedFiles((_change) => {
   // Monitored files have change in VSCode
   connection.console.log('We received an file change event')
+})
+
+connection.onCompletion(
+  (_textDocumentPosition: TextDocumentPositionParams): CompletionItem[] => {
+    return []
+  }
+)
+
+// This handler resolves additional information for the item selected in
+// the completion list.
+connection.onCompletionResolve((item: CompletionItem): CompletionItem => {
+  return item
 })
 
 // Make the text document manager listen on the connection
